@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Shweta ❤️🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      position: relative;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #ff4da6;
+    }
+    header h1 span {
+      display: block;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    section {
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 20px;
+    }
+    section img, section video {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 0, 120, 0.6);
+    }
+    .shayari {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #ff99cc;
+      background: rgba(255,255,255,0.08);
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    video {
+      margin-bottom: 20px;
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+    .confetti span {
+      position: absolute;
+      top: -10px;
+      font-size: 22px;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width:768px) {
+      header h1 { font-size: 2rem; }
+      .shayari { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎂 Happy Birthday Shweta ❤️🌹💖 
+      <span>Stay blessed and keep smiling always 😍💞</span>
+    </h1>
+  </header>
+
+  <!-- Video First -->
+  <section>
+    <video controls autoplay loop>
+      <source src="video.mp4.mp4" type="video/mp4">
+    </video>
+    <div class="shayari">🌹❤️ "Teri hansi meri duniya ka noor hai 💞, 
+      Tere bina sab kuch adhura zaroor hai 💖." 🌹💘</div>
+  </section>
+
+  <!-- Image 1 -->
+  <section>
+    <img src="img1.jpg.jpg" alt="Shweta 1">
+    <div class="shayari">💖 "Har pal teri yaadon se roshan rahe raatein, 
+      Aur teri muskaan se gulabi ho subah 🌹😍."</div>
+  </section>
+
+  <!-- Image 2 -->
+  <section>
+    <img src="img2.jpg.jpg" alt="Shweta 2">
+    <div class="shayari">❤️ "Dosti teri zindagi ka sabse khoobsurat tohfa hai, 
+      Jo dil se mile toh khuda ka noor lagta hai 💞✨."</div>
+  </section>
+
+  <!-- Image 3 -->
+  <section>
+    <img src="img3.jpg.jpg" alt="Shweta 3">
+    <div class="shayari">🌸 "Tu rooh ka sukoon hai, khushiyo ka samaan hai, 
+      Tu zindagi ka sabse pyara armaan hai 💖😍."</div>
+  </section>
+
+  <!-- Image 4 -->
+  <section>
+    <img src="img4.jpg.jpg" alt="Shweta 4">
+    <div class="shayari">🌹 "Jitni khoobsurat teri tasveer hai, 
+      Utni hi roshan teri taqdeer hai ❤️✨."</div>
+  </section>
+
+  <!-- Image 5 -->
+  <section>
+    <img src="img5.jpg.jpg" alt="Shweta 5">
+    <div class="shayari">💘 "Tujhse judi hai har ek dua, 
+      Tu meri khushiyo ka hai jadoo ❤️🌸."</div>
+  </section>
+
+  <!-- Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+  <button onclick="toggleMusic()">🎵 Play/Pause Music</button>
+
+  <!-- Confetti -->
+  <div class="confetti" id="confetti"></div>
+
+  <script>
+    // Music toggle
+    function toggleMusic(){
+      var music=document.getElementById("bg-music");
+      if(music.paused){music.play();}else{music.pause();}
+    }
+
+    // Love Confetti
+    const confettiEl = document.getElementById('confetti');
+    const emojis = ["❤️","💖","🌹","💘","😍","💞"];
+    function createConfetti(){
+      const span = document.createElement('span');
+      span.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+      span.style.left = Math.random()*100 + 'vw';
+      span.style.animationDuration = (3+Math.random()*5)+'s';
+      confettiEl.appendChild(span);
+      setTimeout(()=>{span.remove();},8000);
+    }
+    setInterval(createConfetti,300);
+  </script>
+</body>
+</html>
